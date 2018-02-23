@@ -1,0 +1,23 @@
+#calculator-body {
+  border: 1px solid black;
+  width: 280px;
+}
+
+#header {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#screen, #header {
+  width: 230px;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#screen div {
+  text-align: right;
+  margin-right: 10px;
+  font-size: 35px;
+}
