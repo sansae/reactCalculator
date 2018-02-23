@@ -6,36 +6,36 @@ class Buttons extends Component {
     return (
       <div>
         <div class="buttons" id="rowOneButtons">
-          <div id="ac">AC</div>
-          <div id="ce">CE</div>
-          <div id="divide">&divide;</div>
-          <div id="times">&times;</div>
+          <div>AC</div>
+          <div>CE</div>
+          <div>&divide;</div>
+          <div>&times;</div>
         </div>
 
         <div class="buttons" id="rowTwoButtons">
-          <div id="7">7</div>
-          <div id="8">8</div>
-          <div id="9">9</div>
-          <div id="minus">&minus;</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>&minus;</div>
         </div>
 
         <div class="buttons" id="rowThreeButtons">
-          <div id="4">4</div>
-          <div id="5">5</div>
-          <div id="6">6</div>
-          <div id="plus">+</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>+</div>
         </div>
 
         <div id="lastTwoRows">
           <div class="buttons" id="rowFourButtons">
-            <div id="1">1</div>
-            <div id="2">2</div>
-            <div id="3">3</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
           </div>
 
           <div class="buttons" id="rowFiveButtons">
             <div id="zero">0</div>
-            <div id="dot">.</div>
+            <div>.</div>
           </div>
         </div>
 
