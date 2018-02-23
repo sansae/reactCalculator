@@ -1,6 +1,26 @@
+body {
+/*   background: grey; */
+  background: black;
+  color: #73e600;
+}
+
 #calculator-body {
-  border: 1px solid black;
+  border-radius: 20px;
+/*   box-shadow: 0 0 20px 10px #e0ddb8; */
+  box-shadow: 0 0 20px 10px #73e600;
   width: 280px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 35px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+#footnote {
+  width: 280px;
+  margin: 0 auto;
+  margin-top: -30px;
+  margin-bottom: 20px;
 }
 
 #header {
@@ -8,16 +28,92 @@
   text-decoration: underline;
 }
 
-#screen, #header {
-  width: 230px;
-  border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+#screen {
+/*   border: 2px solid #c1bb71; */
+/*   background: #e0ddb8; */
+  border: 2px solid #73e600;
+  margin-top: 30px;
+  overflow-x: scroll;
 }
 
 #screen div {
   text-align: right;
   margin-right: 10px;
   font-size: 35px;
+}
+
+#header, #screen, #rowOneButtons, #rowTwoButtons, #rowThreeButtons {
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#rowOneButtons, #rowTwoButtons, #rowThreeButtons, #rowFourButtons, #zero {
+  line-height: 35px;
+}
+
+.buttons div {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+/*   border: 1px solid #c1bb71; */
+  border: 1px solid #73e600;
+  text-align: center;
+/*   background: #e0ddb8; */
+  font-size: 19px;
+  cursor: pointer;
+}
+
+#rowFourButtons, #rowFiveButtons {
+  width: 166px;
+  margin-left: 25px;
+}
+
+#rowFiveButtons #zero {
+  width: 102px;
+}
+
+#lastTwoRows {
+  display: inline-block;
+}
+
+#equals {
+  width: 40px;
+  height: 100px;
+/*   border: 1px solid #c1bb71; */
+  border: 1px solid #73e600;
+  text-align: center;
+  float: right;
+  margin-top: 20px;
+  margin-right: 25px;
+/*   background: #e0ddb8; */
+  line-height: 90px;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.buttons div, #equals {
+  box-shadow: 3px 3px #333333;
+}
+
+.buttons div:active, #equals:active {
+  box-shadow: 0 1px #333333;
+  transform: translate(2px, 2px);
+}
+
+#result, #accumulator {
+  margin-bottom: 0px;
+}
+
+#screen #result {
+  height: 45px;
+}
+#screen #accumulator {
+  font-size: 15px;
 }
