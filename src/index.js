@@ -7,13 +7,15 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { result: 0, accumulator: 0 };
+    this.state = { result: "", accumulator: "" };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
+    this.state.accumulator += event.target.textContent;
+
     this.setState({
-      result: event.target.textContent
+      accumulator: this.state.accumulator
     })
   }
 
