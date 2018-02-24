@@ -1,10 +1,18 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 
-class Buttons extends Component {
+class Buttons extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+  handler(event) {
+    alert(event.target.textContent);
+  }
+
   render() {
     return (
-      <div>
+      <div onClick={this.handler}>
         <div class="buttons" id="rowOneButtons">
           <div>AC</div>
           <div>CE</div>

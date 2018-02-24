@@ -1,13 +1,16 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 
-class Screen extends Component {
+class Screen extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
         <div id="screen">
-          <div id="result">result</div>
-          <div id="accumulator">accumulator</div>
+          <div id="result">{this.props.result}</div>
+          <div id="accumulator">{this.props.accumulator}</div>
         </div>
       </div>
     );
