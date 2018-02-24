@@ -17,15 +17,16 @@ class App extends Component {
     var symbols = ["−", "+", "×", "÷"];
 
     if (text.match(/\d/g)) {
-      this.state.result += text;
-      this.state.accumulator += text;
+      result += text;
+      accumulator += text;
     } else if (symbols.includes(text)) {
-      this.state.result = "";
+      result = text;
+      accumulator += text;
     }
 
     this.setState({
-      result: this.state.result,
-      accumulator: this.state.accumulator
+      result: result,
+      accumulator: accumulator
     })
   }
 
