@@ -8,6 +8,13 @@ class App extends Component {
     super(props);
 
     this.state = { result: 0, accumulator: 0 };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    this.setState({
+      result: event.target.textContent
+    })
   }
 
   render() {
@@ -16,7 +23,7 @@ class App extends Component {
         <div id="calculator-body">
           <h4 id="header">Electronic Calculator</h4>
           <Screen result={this.state.result} accumulator={this.state.accumulator}/>
-          <Buttons />
+          <Buttons onClick={this.handleClick} result={this.state.result} accumulator={this.state.accumulator}/>
         </div>
       </div>
     );

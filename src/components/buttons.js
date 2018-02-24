@@ -3,16 +3,11 @@ import React from 'react';
 class Buttons extends React.Component {
   constructor(props) {
     super(props);
-
-  }
-
-  handler(event) {
-    alert(event.target.textContent);
   }
 
   render() {
     return (
-      <div onClick={this.handler}>
+      <div onClick={this.props.onClick}>
         <div class="buttons" id="rowOneButtons">
           <div>AC</div>
           <div>CE</div>
