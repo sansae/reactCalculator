@@ -12,9 +12,19 @@ class App extends Component {
   }
 
   handleClick(event) {
-    this.state.accumulator += event.target.textContent;
+    var { result, accumulator } = this.state;
+    var text = event.target.textContent;
+    var symbols = ["−", "+", "×", "÷"];
+
+    if (text.match(/\d/g)) {
+      this.state.result += text;
+      this.state.accumulator += text;
+    } else if (symbols.includes(text)) {
+      this.state.result = "";
+    }
 
     this.setState({
+      result: this.state.result,
       accumulator: this.state.accumulator
     })
   }
