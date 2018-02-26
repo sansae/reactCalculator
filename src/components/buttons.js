@@ -42,7 +42,7 @@ class Buttons extends React.Component {
           </div>
         </div>
 
-        <div id="equals">=</div>
+        <div onClick={this.props.onClick} id="equals">=</div>
       </div>
     );
   }
