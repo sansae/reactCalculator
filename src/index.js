@@ -88,7 +88,6 @@ class App extends Component {
             decimalPresent = true;
           }
         }
-      // $("#accumulator").text(accumulator);
       }
     }
 
@@ -132,6 +131,7 @@ class App extends Component {
           <Screen result={this.state.result} accumulator={this.state.accumulator}/>
           <Buttons onClick={this.handleClick} result={this.state.result} accumulator={this.state.accumulator}/>
         </div>
+        <p id="footnote">Designed and Coded by Kent Saeteurn</p>
       </div>
     );
   }
