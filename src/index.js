@@ -23,17 +23,39 @@ class App extends Component {
     var { result, accumulator } = this.state;
     var text = event.target.textContent;
     var symbols = ["−", "+", "×", "÷"];
+    var acCE = ["AC", "CE"];
+    var decimalPresent = false;
 
-    if (text.match(/\d/g)) {
+    if (text.match(/\d/g) || (text == "." && !result.includes("."))) {
       result += text;
-      accumulator += text;
     } else if (symbols.includes(text) || (text == "." && !result.includes("."))) {
       result = text;
+    }
+
+    var lastAccumulatorElement = accumulator[accumulator.length - 1];
+    var isSymbol = symbols.includes(text);
+    var noSymbol = !symbols.includes(lastAccumulatorElement);
+    var accumulatorNotEmpty = accumulator != "";
+
+    if (isSymbol && noSymbol && accumulatorNotEmpty) {
+      if (lastAccumulatorElement == ".") {
+        accumulator = "";
+      } else {
+        accumulator += text;
+        decimalPresent = false;
+      }
+    } else if (text.match(/\d/g)) {
+      accumulator += text;
+    } else if (result[result.length - 1] == "." && !decimalPresent && !acCE.includes(text)) {
+      decimalPresent = true;
       accumulator += text;
     }
 
-    if (text == "=") {
+
+
+    if (text == "=" && accumulator != "") {
       result = this.calculate();
+      accumulator = this.calculate();
     }
 
     this.setState({
