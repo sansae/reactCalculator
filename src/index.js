@@ -15,12 +15,27 @@ class App extends Component {
     return this.state.result = "hi";
   }
 
+  getLastNumber(accum) {
+    var accumArr = accum.split("");
+    var lastNumber = [];
+    for (var i = accumArr.length - 1; i >= 0; i--) {
+      if (!symbols.includes(accum[i])) {
+        lastNumber.unshift(accum[i]);
+      } else {
+        break;
+      }
+    }
+    return lastNumber.join("");
+  };
+
   handleClick(event) {
     var { result, accumulator } = this.state;
     var text = event.target.textContent;
     var symbols = ["−", "+", "×", "÷"];
     var acCE = ["AC", "CE"];
     var decimalPresent = false;
+    var copy = "";
+    var popped = "";
 
     if (text.match(/\d/g) || (text == "." && !result.includes("."))) {
       result += text;
@@ -57,8 +72,24 @@ class App extends Component {
       result = "";
       accumulator = "";
     } else if (text == "CE") {
-      result = this.handleCE();
-      accumulator = this.handleCE();
+      result = result.slice(0, -1);
+      if (accumulator != "") {
+        copy = JSON.parse(JSON.stringify(accumulator));
+        copy = copy.split("");
+        popped = copy.pop();
+        if (popped == ".") {
+          decimalPresent = false;
+        }
+
+        accumulator = accumulator.slice(0, -1);
+        if (symbols.includes(popped)) {
+          result = this.getLastNumber(accumulator);
+          if (result.includes(".")) {
+            decimalPresent = true;
+          }
+        }
+      // $("#accumulator").text(accumulator);
+      }
     }
 
     this.setState({
