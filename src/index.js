@@ -11,12 +11,8 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleAC() {
-    alert(`ac was clicked`);
-  }
-
   handleCE() {
-    alert(`ce was clicked`);
+    return this.state.result = "hi";
   }
 
   handleClick(event) {
@@ -54,11 +50,15 @@ class App extends Component {
       }
     }
 
-
-
     if (text == "=" && accumulator != "") {
       result = this.calculate();
       accumulator = this.calculate();
+    } else if (text == "AC") {
+      result = "";
+      accumulator = "";
+    } else if (text == "CE") {
+      result = this.handleCE();
+      accumulator = this.handleCE();
     }
 
     this.setState({
