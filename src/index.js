@@ -33,6 +33,7 @@ class App extends Component {
     }
 
     var lastAccumulatorElement = accumulator[accumulator.length - 1];
+
     var isSymbol = symbols.includes(text);
     var noSymbol = !symbols.includes(lastAccumulatorElement);
     var accumulatorNotEmpty = accumulator != "";
@@ -48,7 +49,9 @@ class App extends Component {
       accumulator += text;
     } else if (result[result.length - 1] == "." && !decimalPresent && !acCE.includes(text)) {
       decimalPresent = true;
-      accumulator += text;
+      if (lastAccumulatorElement != ".") {
+        accumulator += text;
+      }
     }
 
 
