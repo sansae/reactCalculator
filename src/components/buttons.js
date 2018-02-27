@@ -8,21 +8,21 @@ class Buttons extends React.Component {
   render() {
     return (
       <div>
-        <div class="buttons" id="rowOneButtons">
+        <div className="buttons" id="rowOneButtons">
           <div onClick={this.props.onClick}>AC</div>
           <div onClick={this.props.onClick}>CE</div>
           <div onClick={this.props.onClick}>&divide;</div>
           <div onClick={this.props.onClick}>&times;</div>
         </div>
 
-        <div class="buttons" id="rowTwoButtons">
+        <div className="buttons" id="rowTwoButtons">
           <div onClick={this.props.onClick}>7</div>
           <div onClick={this.props.onClick}>8</div>
           <div onClick={this.props.onClick}>9</div>
           <div onClick={this.props.onClick}>&minus;</div>
         </div>
 
-        <div class="buttons" id="rowThreeButtons">
+        <div className="buttons" id="rowThreeButtons">
           <div onClick={this.props.onClick}>4</div>
           <div onClick={this.props.onClick}>5</div>
           <div onClick={this.props.onClick}>6</div>
@@ -30,13 +30,13 @@ class Buttons extends React.Component {
         </div>
 
         <div id="lastTwoRows">
-          <div class="buttons" id="rowFourButtons">
+          <div className="buttons" id="rowFourButtons">
             <div onClick={this.props.onClick}>1</div>
             <div onClick={this.props.onClick}>2</div>
             <div onClick={this.props.onClick}>3</div>
           </div>
 
-          <div class="buttons" id="rowFiveButtons">
+          <div className="buttons" id="rowFiveButtons">
             <div onClick={this.props.onClick} id="zero">0</div>
             <div onClick={this.props.onClick}>.</div>
           </div>

@@ -11,10 +11,6 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleCE() {
-    return this.state.result = "hi";
-  }
-
   getLastNumber(accum) {
     var accumArr = accum.split("");
     var lastNumber = [];
